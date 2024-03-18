@@ -25,25 +25,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         navigation()
-        handleIntentData()
         val token = UserPreferences.getToken(this)
         if (token != null) {
             APIClient.setAuthToken(token)
             navController.navigate(R.id.homeFragment)
-        }
-    }
-
-    private fun handleIntentData(){
-        if (Intent.ACTION_VIEW == intent.action){
-            val uri : Uri? = intent.data
-            uri?.let {
-                val token = uri.getQueryParameter("token")
-                if (!token.isNullOrEmpty()){
-                    val bundle = Bundle()
-                    bundle.putString("token", token)
-                    navController.navigate(R.id.resetPasswordFragment, bundle)
-                }
-            }
         }
     }
 

@@ -128,7 +128,7 @@ class ReservationCarFragment : Fragment() {
             .setTitle("Exit Confirmation")
             .setMessage("Are you sure you want to exit?")
             .setPositiveButton("Exit"){ dialog, which ->
-                requireActivity().finish()
+                requireActivity().finishAffinity()
             }
             .setNegativeButton("Cancel", null)
             .show()

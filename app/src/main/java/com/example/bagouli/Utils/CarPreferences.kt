@@ -32,7 +32,7 @@ object CarPreferences {
         val car = Gson().fromJson(json, Cars::class.java)
         return car?.id
     }
-    fun getCarPrice(): Double?{
+    fun getCarPrice(): Int?{
         val car = getCar()
         return car?.price_per_day
     }

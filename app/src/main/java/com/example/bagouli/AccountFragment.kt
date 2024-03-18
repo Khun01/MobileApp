@@ -18,10 +18,12 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.example.bagouli.Data.TokenRequest
+import com.example.bagouli.Data.UserRequest
 import com.example.bagouli.FirstPage.MainActivity
 import com.example.bagouli.Utils.APIClient
 import com.example.bagouli.Utils.UserPreferences
 import com.example.bagouli.databinding.FragmentAccountBinding
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -48,8 +50,18 @@ class AccountFragment : Fragment() {
             findNavController().navigate(R.id.action_accountFragment_to_mapFragment)
         }
 
-        binding.name.text = UserPreferences.getUserInfo(requireContext())?.name
-        binding.gmailAcc.text = UserPreferences.getUserInfo(requireContext())?.email
+//        binding.name.text = UserPreferences.getUserInfo(requireContext())?.name
+//        binding.gmailAcc.text = UserPreferences.getUserInfo(requireContext())?.email
+//        binding.address.text = UserPreferences.getUserInfo(requireContext())?.address
+//        binding.contactNumber.text = UserPreferences.getUserInfo(requireContext())?.contact_number
+        val userInfo = UserPreferences.getUserInfo(requireContext())
+        if (userInfo != null){
+            binding.name.text = userInfo.name
+            binding.gmailAcc.text = userInfo.email
+            binding.address.text = userInfo.address
+            binding.contactNumber.text = userInfo.contact_number
+        }
+        Picasso.get().load(UserPreferences.getUserInfo(requireContext())?.image).into(binding.profileImage)
 
         binding.logout.setOnClickListener {
             showLogoutDialog()
@@ -111,7 +123,7 @@ class AccountFragment : Fragment() {
             .setTitle("Exit Confirmation")
             .setMessage("Are you sure you want to exit?")
             .setPositiveButton("Exit"){ dialog, which ->
-                requireActivity().finish()
+                requireActivity().finishAffinity()
             }
             .setNegativeButton("Cancel", null)
             .show()

@@ -67,8 +67,6 @@ class LoginFragment : Fragment(), View.OnFocusChangeListener {
                         APIClient.setAuthToken(loginResponse.token)
                         Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT).show()
                         Log.e("User", "User Info: ${loginResponse.user}")
-                        Log.e("User", "User Token: ${loginResponse.token}")
-                        Log.e("User", "User Role: ${loginResponse.role}")
                         findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                         progressDialog.dismiss()
                     }else{

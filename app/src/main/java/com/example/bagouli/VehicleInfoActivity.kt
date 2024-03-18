@@ -46,6 +46,9 @@ class VehicleInfoActivity : AppCompatActivity() {
         binding.price.text = car.price_per_day.toString()
         binding.about.text = car.description
         binding.ratings.text = car.stars.toString()
+        binding.maxHorsePower.text = car.horsepower
+        binding.topSpeed.text = car.top_speed
+        binding.acceleration.text = car.acceleration
         binding.overlay.setBackgroundColor(Color.parseColor("#40000000"))
 
         binding.rnBTN.setOnClickListener {

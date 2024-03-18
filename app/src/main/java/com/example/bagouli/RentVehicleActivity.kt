@@ -63,7 +63,8 @@ class RentVehicleActivity : AppCompatActivity() {
         binding.reservationBTN.setOnClickListener{
             if (binding.fullName.text.isEmpty() || binding.email.text.isEmpty() ||
                 binding.dateStart.text.isEmpty() || binding.dateEnd.text.isEmpty() ||
-                binding.duration.text.isEmpty() || binding.phoneNumber.text.isEmpty()){
+                binding.duration.text.isEmpty() || binding.phoneNumber.text.isEmpty() ||
+                binding.paymentMethod.text.isEmpty()){
                 Toast.makeText(this, "Please put your information", Toast.LENGTH_SHORT).show()
             }
             else{
@@ -87,8 +88,8 @@ class RentVehicleActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ReservationResponse>, response: Response<ReservationResponse>) {
                 if (response.isSuccessful){
                     val fragment = CheckoutFragment()
-                    val enterAnimation = androidx.constraintlayout.widget.R.anim.abc_slide_in_bottom
-                    val exitAnimation = androidx.transition.R.anim.abc_slide_out_bottom
+                    val enterAnimation = androidx.constraintlayout.widget.R.anim.abc_fade_in
+                    val exitAnimation = androidx.transition.R.anim.abc_fade_out
                     supportFragmentManager.beginTransaction()
                         .setCustomAnimations(enterAnimation, exitAnimation)
                         .add(R.id.container, fragment)
@@ -140,7 +141,7 @@ class RentVehicleActivity : AppCompatActivity() {
             val differenceInDays = TimeUnit.MILLISECONDS.toDays(differenceInMills)
             binding.duration.text = getString(R.string.days_difference, differenceInDays)
 
-            val pricePerDay = CarPreferences.getCarPrice() ?: 0.0
+            val pricePerDay = CarPreferences.getCarPrice() ?: 0
             val totalPrice = differenceInDays * pricePerDay
             binding.price.text = totalPrice.toString()
 

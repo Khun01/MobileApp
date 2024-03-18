@@ -10,9 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import com.example.bagouli.databinding.FragmentMapBinding
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class MapFragment : Fragment(), OnMapReadyCallback {
 
@@ -61,5 +64,23 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mGoogleMap = googleMap
+
+        val lat = 16.0433
+        val lng = 120.3333
+
+        val placeLatLng = LatLng(lat, lng)
+        mGoogleMap.addMarker(
+            MarkerOptions()
+                .position(placeLatLng)
+                .title("Dagupan City, Pangasinan")
+        )
+
+        zoomToLocation(lat, lng, 15f)
+    }
+
+    private fun zoomToLocation(latitude: Double, longitude: Double, zoomLevel: Float){
+        val location = LatLng(latitude, longitude)
+        val cameraUpdate = CameraUpdateFactory.newLatLngZoom(location, zoomLevel)
+        mGoogleMap.animateCamera(cameraUpdate)
     }
 }

@@ -20,6 +20,7 @@ class CheckoutFragment : Fragment() {
         binding.nextView.setOnClickListener {
             val intent = Intent(context, MainActivity::class.java)
             startActivity(intent)
+            requireActivity().finish()
         }
         return binding.root
     }
