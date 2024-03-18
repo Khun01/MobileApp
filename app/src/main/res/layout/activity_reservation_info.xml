@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservationInfoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reservation Info"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/cd1"
+        app:layout_constraintBottom_toBottomOf="@id/cd1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="#801A1A1A"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cd2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cd1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/car3"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/carIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/baseline_directions_car_24"
+        app:layout_constraintTop_toBottomOf="@id/cd2"
+        app:layout_constraintStart_toStartOf="@id/cd2"/>
+
+    <TextView
+        android:id="@+id/brand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Aston Martin"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintEnd_toStartOf="@id/model"
+        app:layout_constraintStart_toEndOf="@id/carIcon"
+        app:layout_constraintTop_toTopOf="@id/carIcon"
+        app:layout_constraintBottom_toBottomOf="@id/carIcon"/>
+
+    <TextView
+        android:id="@+id/model"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Valkyrie"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toEndOf="@id/brand"
+        app:layout_constraintTop_toTopOf="@id/brand"
+        app:layout_constraintBottom_toBottomOf="@id/brand"
+        app:layout_constraintEnd_toEndOf="@id/cd2"/>
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#331A1A1A"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/brand"/>
+
+    <TextView
+        android:id="@+id/fromTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/carIcon"
+        app:layout_constraintTop_toBottomOf="@id/v1"/>
+
+    <TextView
+        android:id="@+id/toTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/fromTv"
+        app:layout_constraintStart_toStartOf="@id/model"
+        app:layout_constraintEnd_toEndOf="@id/cd2"/>
+
+    <TextView
+        android:id="@+id/dateStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1212/23/12"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/fromTv"
+        app:layout_constraintStart_toStartOf="@id/fromTv"/>
+
+    <TextView
+        android:id="@+id/dateEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1212/23/12"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/toTv"
+        app:layout_constraintStart_toStartOf="@id/toTv"/>
+
+    <TextView
+        android:id="@+id/priceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/dateStart"
+        app:layout_constraintStart_toStartOf="@id/dateStart"/>
+
+    <TextView
+        android:id="@+id/pesoSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₱"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/priceTV"
+        app:layout_constraintStart_toStartOf="@id/priceTV"/>
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10000"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toTopOf="@id/pesoSign"
+        app:layout_constraintStart_toEndOf="@id/pesoSign"
+        app:layout_constraintBottom_toBottomOf="@id/pesoSign"/>
+
+    <TextView
+        android:id="@+id/statusTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/dateEnd"
+        app:layout_constraintStart_toStartOf="@id/dateEnd"/>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pending"
+        android:textStyle="italic|bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/statusTv"
+        app:layout_constraintStart_toStartOf="@id/statusTv"/>
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#331A1A1A"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/totalPrice"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cancelBTN"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/cancelBTNTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel Reservation"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_gravity="center"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

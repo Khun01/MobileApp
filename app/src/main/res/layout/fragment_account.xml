@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AccountFragment">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/car3"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/profileImage"
+        app:layout_constraintTop_toTopOf="@id/profileImage"
+        app:layout_constraintBottom_toBottomOf="@id/profileImage">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Brandon Lambino"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/gmailAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="johnbrandonlambino123gmail.com"
+            android:textSize="12sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Edit"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@id/l1"
+        app:layout_constraintBottom_toBottomOf="@id/l1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A1A"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"/>
+
+    <ImageView
+        android:id="@+id/creditCard"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/twotone_credit_card_24"
+        app:layout_constraintTop_toTopOf="@id/l2"
+        app:layout_constraintBottom_toBottomOf="@id/l2"
+        app:layout_constraintStart_toStartOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="@id/profileImage"/>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/v1"
+        app:layout_constraintStart_toStartOf="@id/l1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Method"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 cards are available"
+            android:textColor="@color/black"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A1A"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/l2"/>
+
+    <ImageView
+        android:id="@+id/address"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_location_on_24"
+        app:layout_constraintTop_toTopOf="@id/l3"
+        app:layout_constraintBottom_toBottomOf="@id/l3"
+        app:layout_constraintStart_toStartOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="@id/profileImage"/>
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/v2"
+        app:layout_constraintStart_toStartOf="@id/l1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add or remove address"
+            android:textColor="@color/black"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A1A"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/l3"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/c2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toBottomOf="@id/v3"
+        android:background="@color/gray">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferences"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_map_24"
+        app:layout_constraintTop_toTopOf="@id/l7"
+        app:layout_constraintBottom_toBottomOf="@id/l7"
+        app:layout_constraintStart_toStartOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="@id/profileImage"/>
+
+    <LinearLayout
+        android:id="@+id/l7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/c2"
+        app:layout_constraintStart_toStartOf="@id/l1">
+
+        <TextView
+            android:id="@+id/mapF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find your location"
+            android:textColor="@color/black"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A1A"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/l7"/>
+
+    <ImageView
+        android:id="@+id/notification"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_notifications_24"
+        app:layout_constraintTop_toTopOf="@id/l4"
+        app:layout_constraintBottom_toBottomOf="@id/l4"
+        app:layout_constraintStart_toStartOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="@id/profileImage"/>
+
+    <LinearLayout
+        android:id="@+id/l4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/v7"
+        app:layout_constraintStart_toStartOf="@id/l1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn on or off"
+            android:textColor="@color/black"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A1A"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/l4"/>
+
+    <ImageView
+        android:id="@+id/privacy"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_privacy_tip_24"
+        app:layout_constraintTop_toTopOf="@id/l5"
+        app:layout_constraintBottom_toBottomOf="@id/l5"
+        app:layout_constraintStart_toStartOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="@id/profileImage"/>
+
+    <LinearLayout
+        android:id="@+id/l5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/v4"
+        app:layout_constraintStart_toStartOf="@id/l1">
+
+        <TextView
+            android:id="@+id/ppf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy Policy"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A1A"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/l5"/>
+
+    <ImageView
+        android:id="@+id/logoutIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/twotone_logout_24"
+        app:layout_constraintTop_toTopOf="@id/l6"
+        app:layout_constraintBottom_toBottomOf="@id/l6"
+        app:layout_constraintStart_toStartOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="@id/profileImage"/>
+
+    <LinearLayout
+        android:id="@+id/l6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/v5"
+        app:layout_constraintStart_toStartOf="@id/l1">
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A1A"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/l6"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Home"
+        android:icon="@drawable/icon_home_clicked"/>
+    <item
+        android:id="@+id/reservationCarFragment"
+        android:title="Reservation"
+        android:icon="@drawable/icon_car_clicked"/>
+    <item
+        android:id="@+id/accountFragment"
+        android:title="Account"
+        android:icon="@drawable/icon_account_clicked"/>
+</menu>
