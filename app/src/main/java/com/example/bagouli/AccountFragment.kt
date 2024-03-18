@@ -50,18 +50,28 @@ class AccountFragment : Fragment() {
             findNavController().navigate(R.id.action_accountFragment_to_mapFragment)
         }
 
-//        binding.name.text = UserPreferences.getUserInfo(requireContext())?.name
-//        binding.gmailAcc.text = UserPreferences.getUserInfo(requireContext())?.email
-//        binding.address.text = UserPreferences.getUserInfo(requireContext())?.address
-//        binding.contactNumber.text = UserPreferences.getUserInfo(requireContext())?.contact_number
         val userInfo = UserPreferences.getUserInfo(requireContext())
+
+        binding.name.text = userInfo?.name
+        binding.gmailAcc.text = userInfo?.email
+
         if (userInfo != null){
-            binding.name.text = userInfo.name
-            binding.gmailAcc.text = userInfo.email
-            binding.address.text = userInfo.address
-            binding.contactNumber.text = userInfo.contact_number
+            if (userInfo.address == null){
+                binding.address.text = "Add or remove address"
+            }else{
+                binding.address.text = userInfo.address
+            }
+            if (userInfo.contact_number == null){
+                binding.contactNumber.text = "Add or remove contact number"
+            }else{
+                binding.contactNumber.text = userInfo.contact_number
+            }
+            if (userInfo.image == null){
+                binding.profileImage.setImageResource(R.drawable.default_image)
+            }else{
+                Picasso.get().load(userInfo.image).into(binding.profileImage)
+            }
         }
-        Picasso.get().load(UserPreferences.getUserInfo(requireContext())?.image).into(binding.profileImage)
 
         binding.logout.setOnClickListener {
             showLogoutDialog()
